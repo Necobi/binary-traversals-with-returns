@@ -158,15 +158,16 @@ public class TraversalPractice {
      */
     public static int branchCount(TreeNode node) {
         if(node==null) return 0;
-         int rightBranch =0;;
-         int leftBranch = 0;
-        if(node.left!=null||node.right!=null){
-            rightBranch++;
-            branchCount(node.right);
-            leftBranch++;
-            branchCount(node.left);
+         int count =0;
+        if(node.left!=null){
+            count+= 1+ branchCount(node.left);
         }
-        return leftBranch+rightBranch;
+
+        if(node.right!=null){
+            count+= 1 +branchCount(node.right);
+            
+        }
+        return count;
     }
 
 

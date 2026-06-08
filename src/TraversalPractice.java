@@ -198,9 +198,12 @@ public class TraversalPractice {
         int leftMax =0;
         int rightMax =0;
         leftMax = max(node.left);
-        
+        if(node.data>leftMax){
+            leftMax=node.data;
+        }
         rightMax =max(node.right);
-        if(rightMax>node.data){
+
+        if(node.data>rightMax){
             rightMax=node.data;
         }
         
